@@ -4,8 +4,11 @@
 Ovaj projekt predstavlja automatizirani testni framework za web stranicu [SauceDemo](https://www.saucedemo.com/).  
 Omogućava testiranje ključnih funkcionalnosti web aplikacije, uključujući:
 
-- Login s različitim korisnicima  
-- Dodavanje proizvoda u košaricu  
+- Login s različitim korisnicima
+- Invalid Login
+- Logout 
+- Dodavanje proizvoda u košaricu
+- Brisanje proizvoda iz košarice
 - Checkout procesa  
 - Sorting (Price: Low to High)
 
@@ -31,7 +34,7 @@ Projekt je razvijen koristeći Javu, Maven, Selenium WebDriver, JUnit 5 i Extent
 
 - `src/test/java/base` – sadrži `BaseTest.java` za setup i teardown testova  
 - `src/test/java/pages` – sadrži POM klase: `LoginPage`, `ProductsPage`, `CartPage`, `CheckoutPage`, `ProducttsPage`  
-- `src/test/java/tests` – sadrži test klase: `LoginTest`, `AddToCartTest`, `CheckoutTest`, `SortTest`  
+- `src/test/java/tests` – sadrži test klase: `AddToCartTest`, `CheckoutTest`, `InvalidLoginTest`, `LoginTest`, `LogoutTest`, `RemoveFromCartTest`, `SortTest`
 - `src/test/java/utils` – sadrži `DriverFactory`, `ReportManager`, `ScreenshotUtils`  
 - `pom.xml` – Maven konfiguracija projekta  
 - `.gitignore` – datoteke i folderi koji se ne trebaju pushati  
@@ -55,7 +58,8 @@ Projekt je razvijen koristeći Javu, Maven, Selenium WebDriver, JUnit 5 i Extent
 
 - Cross-browser testiranje (Brave i Chrome)  
 - ScreenshotUtils za automatsko spremanje screenshotova  
-- Page Object Model (POM) za organizaciju koda  
+- Page Object Model (POM) za organizaciju koda
+- Wait naredbe u Selenium WebDriveru
 - WebDriverManager za automatsko preuzimanje drivera  
 - JUnit 5 i Maven Surefire za automatsko pokretanje testova  
 - Objektno orijentirani pristup sa BaseTest, utils i pages paketima  
@@ -66,4 +70,5 @@ Projekt je razvijen koristeći Javu, Maven, Selenium WebDriver, JUnit 5 i Extent
 ## Testni korisnici
 
 - `standard_user / secret_sauce` – valid login  
-- `locked_out_user / secret_sauce` – neuspjeli login  
+- `locked_out_user / secret_sauce` – neuspjeli login
+- `invalid_user` - user koji ne postoji (za invalid login)
